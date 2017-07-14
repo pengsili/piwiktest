@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>piwik/page2 title</title>
+    <script src="https://cdn.staticfile.org/extjs/3.4.1-1/adapter/ext/ext-base-debug.js"></script>
+    <script src="https://cdn.staticfile.org/extjs/3.4.1-1/ext-all.js"></script>
+    <script src="./fwk_api/oocl_piwik_config.js"></script>
+    <script src="./fwk_api/oocl_piwik.js"></script>
+    <script src="./fwk_api/oocl_piwik_ext.js"></script>
+    </script>
+</head>
+
+<body>
+    page 2
+    <button onclick="test()">test</button>
+</body>
+<script type="text/javascript">
+    function test() {
+        Ext.Ajax.request({
+            url: 'http://localhost/piwik/piwik.js',
+            success: function (data,response) {
+            }
+        })
+
+    }
+
+</script>
+
+</html>

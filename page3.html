@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>piwik/page3 title</title>
+    <!-- <script src="https://cdn.staticfile.org/angular.js/1.4.3/angular.js"></script> -->
+
+    <!--<script src="http://localhost/piwik/fwk_api/oocl_piwik_config.js"></script>
+    <script src="http://localhost/piwik/fwk_api/oocl_piwik.js"></script>
+    <script src="http://localhost/piwik/fwk_api/oocl_piwik_angular.js"></script>-->
+    <script src="./fwk_api/oocl_piwik_config.js"></script>
+    <script src="./fwk_api/oocl_piwik.js"></script>
+    <script src="./fwk_api/oocl_piwik_angular_1.4.js"></script>
+    <!-- <script src='./test.js'></script> -->
+</head>
+
+<body ng-controller="AppController">
+    <span>page 3</span>
+    <button ng-click="success()">Success</button>
+    <button ng-click="test()">Test</button>
+    <form id="formid" data-piwik-name="formname">
+        <input type="text" name="user" autofocus="autofocus">
+        <input type="password" name="password">
+        <input type="test" name="nickname">
+         <input type="submit"name="submit" value="提交"> 
+    </form>
+
+    <form id="formid2" name="formname2">
+        <input type="text" name="user">
+        <input type="password" name="password">
+        <!-- <input type="submit"> -->
+    </form>
+    <div data-piwik-form="111" name='test'>
+        <input type="text" name="piwik">
+    </div>
+    <!--<img src="https://www.baidu.com/img/bd_logo1.png">-->
+</body>
+<script>
+    document.forms[0].onsubmit=formSubmit;
+function formSubmit(){
+    var http=new XMLHttpRequest();
+    http.open('POST','http://localhost/piwiktest/page2.html');
+    http.send();
+    return false;
+}
+</script>
+
+</html>
