@@ -10,7 +10,8 @@ oocl_piwik_config = {
     {
       // piwik_url: 'http://localhost/piwik',
       piwik_url: 'https://pengaa.innocraft.cloud',
-      url: 'http://localhost/piwiktest',
+      // piwik_url: 'https://olp.innocraft.cloud',
+      url: 'http://pengaa-w7/piwiktest',
       siteId: 1,
       // disable:true,
       cookieid_callback: function () {

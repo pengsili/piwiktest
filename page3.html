@@ -18,19 +18,19 @@
     <span>page 3</span>
     <button ng-click="success()">Success</button>
     <button ng-click="test()">Test</button>
-    <form id="formid" data-piwik-name="formname">
+    <form id="formid" data-piwik-name="Page3Form1">
         <input type="text" name="user" autofocus="autofocus">
         <input type="password" name="password">
         <input type="test" name="nickname">
          <input type="submit"name="submit" value="提交"> 
     </form>
 
-    <form id="formid2" name="formname2">
+    <form id="formid2" name="Page3Form2">
         <input type="text" name="user">
         <input type="password" name="password">
         <!-- <input type="submit"> -->
     </form>
-    <div data-piwik-form="111" name='test'>
+    <div data-piwik-form="111" name='Page3Form3'>
         <input type="text" name="piwik">
     </div>
     <!--<img src="https://www.baidu.com/img/bd_logo1.png">-->
@@ -38,6 +38,7 @@
 <script>
     document.forms[0].onsubmit=formSubmit;
 function formSubmit(){
+    Piwik.getAsyncTrackers()[0].setRequestMethod('POST');
     var http=new XMLHttpRequest();
     http.open('POST','http://localhost/piwiktest/page2.html');
     http.send();

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>piwik/page4 title</title>
+    <!-- <script src="https://cdn.staticfile.org/angular.js/1.4.3/angular.js"></script> -->
+
+    <!--<script src="http://localhost/piwik/fwk_api/oocl_piwik_config.js"></script>
+    <script src="http://localhost/piwik/fwk_api/oocl_piwik.js"></script>
+    <script src="http://localhost/piwik/fwk_api/oocl_piwik_angular.js"></script>-->
+    <!-- <script src="./fwk_api/oocl_piwik_config.js"></script>
+    <script src="./fwk_api/oocl_piwik.js"></script>
+    <script src="./fwk_api/oocl_piwik_angular_1.4.js"></script>
+    <script src='./test.js'></script> -->
+</head>
+<script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//olp.innocraft.cloud/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<body ng-controller="AppController">
+    <span>page 4</span>
+    <!-- <button ng-click="success()">Success</button>
+    <button ng-click="test()">Test</button> -->
+    <form id="formid" data-piwik-name="Page4Form1">
+        <input type="text" name="user" autofocus="autofocus">
+        <input type="password" name="password">
+        <input type="test" name="nickname">
+        <input type="submit" name="submit" value="提交">
+    </form>
+
+    <form id="formid2" name="Page4Form12">
+        <input type="text" name="user">
+        <input type="password" name="password">
+        <input type="submit" name="submit" value="提交">
+        <!-- <input type="submit"> -->
+    </form>
+    <!-- <div data-piwik-form="111" name='page4form3'>
+        <input type="text" name="piwik">
+    </div> -->
+    <!--<img src="https://www.baidu.com/img/bd_logo1.png">-->
+</body>
+<script>
+    document.forms[1].onsubmit = formSubmit;
+    function formSubmit() {
+        Piwik.getAsyncTrackers()[0].setRequestMethod('POST');
+        alert(1);
+        var http = new XMLHttpRequest();
+        http.open('POST', 'http://pengaa-w7/piwiktest/page2.html');
+        http.send();
+        return false;
+    }
+
+</script>
+</html>
